@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col justify-center items-center h-screen bg-gray-100 relative">
-        <form @submit="loginUser" class="w-[400px] p-12 rounded-lg bg-white shadow-md">
+        <form @submit="loginUser" class="w-[400px] p-12 rounded bg-white shadow-md">
             <!-- Header -->
             <div class="mb-6">
                 <h1 class="text-2xl font-bold">Welcome Back</h1>
@@ -60,7 +60,7 @@
 
             <button
                 type="submit"
-                class="bg-blue-600 text-white w-full mt-5 font-semibold px-2 py-3 rounded-md"
+                class="bg-black text-white w-full mt-5 font-semibold px-2 py-3"
                 :disabled="isSubmitting"
             >
                 Login
