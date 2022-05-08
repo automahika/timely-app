@@ -2,8 +2,8 @@
     <div class="flex flex-col justify-center items-center h-screen bg-gray-100 relative">
         <form @submit="loginUser" class="w-[400px] p-12 rounded bg-white shadow-md">
             <!-- Header -->
-            <div class="mb-6">
-                <h1 class="text-2xl font-bold">Welcome Back</h1>
+            <div class="mb-10">
+                <h1 class="text-2xl font-bold">Start your day with Thinkspace.</h1>
             </div>
 
             <!-- Validation Errors -->
@@ -17,11 +17,11 @@
             </div>
 
             <div v-if="authErrorMsg" class="text-center mb-8">
-                <span class="text-sm text-red-600 font-semibold mb-1">{{ authErrorMsg }}</span>
+                <span class="text-sm text-red-600 font-medium mb-1">{{ authErrorMsg }}</span>
             </div>
 
             <div class="mb-2">
-                <label for="email" class="font-semibold mb-2 block text-gray-400">Email Address</label>
+                <label for="email" class="font-medium mb-2 block text-gray-400">Email Address</label>
                 <input
                     v-model="email"
                     name="email"
@@ -33,7 +33,7 @@
             </div>
 
             <div>
-                <label for="password" class="font-semibold mb-2 block text-gray-400">Password</label>
+                <label for="password" class="font-medium mb-2 block text-gray-400">Password</label>
                 <input
                     v-model="password"
                     name="password"
@@ -49,12 +49,12 @@
                     <input
                         name="rememberme"
                         type="checkbox"
-                        class="appearance-none checked:bg-blue-600 checked:border-transparent border-gray-300 rounded-md hover:cursor-pointer"
+                        class="appearance-none checked:bg-black checked:border-transparent border-gray-300 hover:cursor-pointer"
                     />
-                    <label for="rememberme" class="ml-2 font-medium">Remember me</label>
+                    <label for="rememberme" class="ml-2 font-medium text-sm">Remember me</label>
                 </div>
                 <div>
-                    <a href="#" class="underline underline-offset-4 font-medium text-blue-600">Forgot password?</a>
+                    <a href="#" class="underline underline-offset-4 font-medium text-sm">Forgot password?</a>
                 </div>
             </div>
 
@@ -71,7 +71,7 @@
         <div class="text-center mt-12">
             <p>
                 Don't have an account yet?
-                <a href="#">Start using <span class="font-medium text-blue-600">ThinkSpace</span>.</a>
+                <a href="#">Start using <span class="font-semibold">Thinkspace</span>.</a>
             </p>
         </div>
     </div>
