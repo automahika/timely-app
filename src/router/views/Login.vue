@@ -1,9 +1,10 @@
 <template>
     <div class="flex flex-col justify-center items-center h-screen bg-gray-100 relative">
-        <form @submit="loginUser" class="w-[400px] p-12 rounded bg-white shadow-md">
+        <form @submit="loginUser" class="w-[440px] p-14 rounded-xl bg-white shadow-md">
             <!-- Header -->
-            <div class="mb-10">
-                <h1 class="text-2xl font-bold">Start your day with Thinkspace.</h1>
+            <div class="mb-10 text-center">
+                <h1 class="text-3xl font-bold">Agent Login</h1>
+                <p class="mt-4 font-medium">Hey, enter your details to get sign in to your acocunt.</p>
             </div>
 
             <!-- Validation Errors -->
@@ -21,30 +22,30 @@
             </div>
 
             <div class="mb-2">
-                <label for="email" class="font-medium mb-2 block text-gray-400">Email Address</label>
+                <!-- <label for="email" class="font-medium mb-2 block text-gray-400">Email Address</label> -->
                 <input
                     v-model="email"
                     name="email"
                     type="text"
                     :class="{ 'border-red-500': emailError }"
-                    class="w-full mb-2 bg-gray-100 border-none rounded-md py-3 font-medium placeholder-gray-400"
-                    placeholder="email@youraddress.com"
+                    class="w-full mb-2 bg-gray-100 border-none rounded py-4 px-4 font-medium placeholder-gray-400 placeholder:font-medium"
+                    placeholder="Enter Email / Phone No"
                 />
             </div>
 
             <div>
-                <label for="password" class="font-medium mb-2 block text-gray-400">Password</label>
+                <!-- <label for="password" class="font-medium mb-2 block text-gray-400">Password</label> -->
                 <input
                     v-model="password"
                     name="password"
                     type="password"
                     :class="{ 'border-red-500': passwordError }"
-                    class="w-full mb-2 bg-gray-100 border-none rounded-md py-3 font-medium placeholder-gray-400"
-                    placeholder="************"
+                    class="w-full mb-2 bg-gray-100 border-none rounded py-4 px-4 font-medium placeholder-gray-400 placeholder:font-medium"
+                    placeholder="Passcode"
                 />
             </div>
 
-            <div class="mt-4 mb-4 flex items-center">
+            <div class="mt-2 mb-4 flex items-center">
                 <div class="flex-1 flex items-center">
                     <input
                         name="rememberme"
@@ -54,16 +55,16 @@
                     <label for="rememberme" class="ml-2 font-medium text-sm">Remember me</label>
                 </div>
                 <div>
-                    <a href="#" class="underline underline-offset-4 font-medium text-sm">Forgot password?</a>
+                    <a href="#" class="underline underline-offset-4 font-semibold text-sm">Forgot password?</a>
                 </div>
             </div>
 
             <button
                 type="submit"
-                class="bg-black text-white w-full mt-5 font-semibold px-2 py-3"
+                class="bg-black text-white w-full mt-5 font-semibold px-2 py-4 rounded"
                 :disabled="isSubmitting"
             >
-                Login
+                Sign in
             </button>
         </form>
 
