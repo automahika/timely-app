@@ -1,6 +1,11 @@
 <template>
-    <div class="flex justify-center items-center h-screen">
-        <form @submit="loginUser" class="w-[350px] border-2 border-black p-10 rounded-lg">
+    <div class="flex flex-col justify-center items-center h-screen bg-gray-100 relative">
+        <form @submit="loginUser" class="w-[400px] p-12 rounded-lg bg-white shadow-md">
+            <!-- Header -->
+            <div class="mb-6">
+                <h1 class="text-2xl font-bold">Welcome Back</h1>
+            </div>
+
             <!-- Validation Errors -->
             <div v-if="Object.keys(errors).length > 0">
                 <span class="text-sm font-semibold mb-3 block">Please check the following errors:</span>
@@ -15,33 +20,60 @@
                 <span class="text-sm text-red-600 font-semibold mb-1">{{ authErrorMsg }}</span>
             </div>
 
-            <input
-                v-model="email"
-                name="email"
-                type="text"
-                :class="{ 'border-red-500': emailError }"
-                class="w-full text-sm mb-2 border-2 border-black rounded-lg py-3"
-                placeholder="youremail@domain.com"
-            />
+            <div class="mb-2">
+                <label for="email" class="font-semibold mb-2 block text-gray-400">Email Address</label>
+                <input
+                    v-model="email"
+                    name="email"
+                    type="text"
+                    :class="{ 'border-red-500': emailError }"
+                    class="w-full mb-2 bg-gray-100 border-none rounded-md py-3 font-medium placeholder-gray-400"
+                    placeholder="email@youraddress.com"
+                />
+            </div>
 
-            <!-- Password Field -->
-            <input
-                v-model="password"
-                name="password"
-                type="password"
-                :class="{ 'border-red-500': passwordError }"
-                class="w-full text-sm border-2 border-black rounded-lg py-3"
-                placeholder="******"
-            />
+            <div>
+                <label for="password" class="font-semibold mb-2 block text-gray-400">Password</label>
+                <input
+                    v-model="password"
+                    name="password"
+                    type="password"
+                    :class="{ 'border-red-500': passwordError }"
+                    class="w-full mb-2 bg-gray-100 border-none rounded-md py-3 font-medium placeholder-gray-400"
+                    placeholder="************"
+                />
+            </div>
+
+            <div class="mt-4 mb-4 flex items-center">
+                <div class="flex-1 flex items-center">
+                    <input
+                        name="rememberme"
+                        type="checkbox"
+                        class="appearance-none checked:bg-blue-600 checked:border-transparent border-gray-300 rounded-md hover:cursor-pointer"
+                    />
+                    <label for="rememberme" class="ml-2 font-medium">Remember me</label>
+                </div>
+                <div>
+                    <a href="#" class="underline underline-offset-4 font-medium text-blue-600">Forgot password?</a>
+                </div>
+            </div>
 
             <button
                 type="submit"
-                class="bg-black text-white w-full mt-5 font-semibold text-sm p-2 rounded-lg py-3"
+                class="bg-blue-600 text-white w-full mt-5 font-semibold px-2 py-3 rounded-md"
                 :disabled="isSubmitting"
             >
                 Login
             </button>
         </form>
+
+        <!-- Create account link -->
+        <div class="text-center mt-12">
+            <p>
+                Don't have an account yet?
+                <a href="#">Start using <span class="font-medium text-blue-600">ThinkSpace</span>.</a>
+            </p>
+        </div>
     </div>
 </template>
 
